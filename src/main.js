@@ -7,11 +7,11 @@ document.querySelector('#app').innerHTML = `
         <h1>${quiz.title}</h1>
         <button id="start">Démarrer</button>
     </div>
-    <div id="divQuizz">
+    <div id="screenQuizz">
         <header>
             <h1>${quiz.title}</h1>
         </header>
-        <div id="screenQuizz>
+        <div id="divQuizz>
             <h2 id="question"></h2>
             <div id ="responseChoice">
                 <button id="choice1"></button>
@@ -19,14 +19,18 @@ document.querySelector('#app').innerHTML = `
                 <button id="choice3"></button>
                 <button id="choice4"></button>
             </div>
-            <div id="responseMessage">
-                <p id="message"></p>
-            </div>
+            <p id="responseMessage"></p>
             <button id="continue">Continue</button>
         </div>
-        
+    </div>
+    <div id="endScreen">
+        <h2 id="scoreMessage"></h2>
+        <h3 id="poucentageResponseMessage"></h3>
+        <p id="score"></p>
+        <button id="replayQuizz"></button>
+    </div>
 
 
 `
 
-startQuizz(document.querySelector('#start'), document.querySelector('#acceuil'))
+startQuizz(document.querySelector('#start'))
