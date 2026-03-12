@@ -1,6 +1,7 @@
 import './style.css'
 import quiz from "./quiz-femmes-scientifiques.json";
 import { variable } from './variable';
+import { showQuestion } from './show-question';
 
 export function seeScore(){
     let pourcentage = (variable.score / quiz.questions.length) * 100
@@ -27,4 +28,9 @@ export function seeScore(){
         <button id="replayQuizz">Restart</button>
     </div>
     `
+    document.querySelector('#replayQuizz').addEventListener('click', () =>{
+        variable.score = 0
+        variable.indexQuestion = 0
+        showQuestion()
+    })
 }
