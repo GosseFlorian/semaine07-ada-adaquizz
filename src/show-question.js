@@ -34,18 +34,21 @@ export function showQuestion(){
                 variable.indexQuestion ++
                 // console.log(variable.indexQuestion)
                 document.querySelector('#app').innerHTML += `
-                <button class="nextQuestion">Continue</button>
+                <button id="nextQuestion">Continue</button>
                 `
+                document.querySelector('#nextQuestion').addEventListener('click', async() =>{
+                    const { showQuestion } = await import('./show-question');
+                    showQuestion()
+                })
             } else {
                 document.querySelector('#app').innerHTML += `
-                <button class="seeScore">Score</button>
+                <button id="seeScore">Score</button>
                 `
+                document.querySelector('#seeScore').addEventListener('click', async() =>{
+                    const { seeScore } = await import('./see-score');
+                    seeScore()
+                })
             }
         })
     })
-
-    // document.querySelector('#choice').addEventListener('click', async() =>{
-    //     const { answer } = await import('./answer');
-    //     answer()
-    // })
 }

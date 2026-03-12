@@ -1,5 +1,3 @@
-export function seeScore(button){
-    button.addEventListener('click',() =>{
-
-    })
+export function seeScore(){
+    console.log("on a fini")
 }
