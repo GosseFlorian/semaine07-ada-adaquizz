@@ -1,5 +1,3 @@
-export function answer(button){
-    button.addEventListener('click',() =>{
+export function answer(){
         console.log("bonjour")
-    })
 }
