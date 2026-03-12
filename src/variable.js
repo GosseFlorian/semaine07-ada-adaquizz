@@ -1,3 +1,5 @@
-export let score = 0
-export let indexQuestion = 0
-export let selectedAnswer = ""
+export let variable = {
+    score: 0,
+    indexQuestion: 0,
+    selectedAnswer: null
+}
