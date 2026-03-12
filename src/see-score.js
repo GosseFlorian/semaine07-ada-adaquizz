@@ -23,7 +23,7 @@ export function seeScore(){
     <div id="seeScore">
         <h2 id="scoreMessage">${messageScore}</h2>
 	    <h3 id="scorePourcentage">${pourcentage}% de bonne réponse</h3>
-        <p id="score">Ton score est de ${variable.score}/${quiz.questions.length}</p>
+        <p id="score">Resultats : ${variable.score}/${quiz.questions.length}</p>
         <button id="replayQuizz">Restart</button>
     </div>
     `
