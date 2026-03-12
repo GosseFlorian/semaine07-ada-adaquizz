@@ -12,7 +12,7 @@ export function seeScore(){
         messageScore = "C'est bien, tu as fait peu d'erreurs 😉"
     } else if(pourcentage >= 50){
         messageScore = "C'est pas mal, mais tu peux encore t'améliorer 💪"
-    } else if(pourcentage <= 50 && pourcentage > 0){
+    } else if(pourcentage < 50 && pourcentage > 0){
         messageScore = "Aïe, tu as beaucoup d'erreurs, tu devrais réessayer 😅"
     } else {
         messageScore = "Oups ! Tu n'as trouvé aucune bonne réponse 😱"
