@@ -6,7 +6,6 @@ import { showQuestion } from './show-question';
 export function seeScore(){
     let pourcentage = (variable.score / quiz.questions.length) * 100
     let messageScore = null
-
     if(pourcentage >= 100){
         messageScore = "Aucune erreur, c'est parfait 😎"
     } else if(pourcentage >= 80){
@@ -18,15 +17,11 @@ export function seeScore(){
     } else {
         messageScore = "Oups ! Tu n'as trouvé aucune bonne réponse 😱"
     }
-
-
     document.querySelector('#app').innerHTML =`
-    <div id="seeScore">
         <h2 id="scoreMessage">${messageScore}</h2>
 	    <h3 id="scorePourcentage">${pourcentage}% de bonne réponse</h3>
         <p id="score">Resultats : ${variable.score}/${quiz.questions.length}</p>
         <button id="replayQuizz">Restart</button>
-    </div>
     `
     document.querySelector('#replayQuizz').addEventListener('click', () =>{
         variable.score = 0
