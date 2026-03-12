@@ -33,10 +33,6 @@ h1 {
   text-align: center;
 }
 
-#screenQuizz, #endScreen {
-  display: none;
-}
-
 button {
   border-radius: 8px;
   border: 1px solid transparent;
