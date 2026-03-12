@@ -2,8 +2,7 @@ import './style.css'
 import quiz from "./quiz-femmes-scientifiques.json";
 import { indexQuestion, score, selectedAnswer } from './variable';
 
-export function showQuestion(button){
-    button.addEventListener('click',() =>{
+export function showQuestion(){
         document.querySelector('#app').innerHTML = `
             <h2 id="question">${quiz.questions[indexQuestion].question}</h2>
             <div id ="responseChoice">
@@ -13,7 +12,4 @@ export function showQuestion(button){
                 <button class="choice">${quiz.questions[indexQuestion].options[3]}</button>
             </div>
         `
-    })
 }
-
-// answer(document.querySelector('.choice'))
