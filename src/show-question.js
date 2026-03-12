@@ -18,13 +18,29 @@ export function showQuestion(){
     choices.forEach((element, index) => {
         element.addEventListener('click', () => {
             if(index === quiz.questions[variable.indexQuestion].correctIndex){
-                console.log("Bonne réponse")
                 variable.score ++
-                console.log(variable.score)
+                document.querySelector('#app').innerHTML += `
+                <p id="goodAnswer">C'est une bonne réponse !</p>
+                `
+                // console.log("Bonne réponse")
+                // console.log(variable.score)
             } else {
-                console.log("mauvaise réponse")
+                document.querySelector('#app').innerHTML += `
+                <p id="badAnswer">Raté, la réponse était : ${quiz.questions[variable.indexQuestion].options[quiz.questions[variable.indexQuestion].correctIndex]}</p>
+                `
+                // console.log("mauvaise réponse")
             }
-            //
+            if(variable.indexQuestion < quiz.questions.length -1){
+                variable.indexQuestion ++
+                // console.log(variable.indexQuestion)
+                document.querySelector('#app').innerHTML += `
+                <button class="nextQuestion">Continue</button>
+                `
+            } else {
+                document.querySelector('#app').innerHTML += `
+                <button class="seeScore">Score</button>
+                `
+            }
         })
     })
 
