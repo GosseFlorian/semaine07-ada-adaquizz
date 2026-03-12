@@ -1,4 +1,4 @@
-export function nextQuestion(button){
+export function seeScore(button){
     button.addEventListener('click',() =>{
 
     })
