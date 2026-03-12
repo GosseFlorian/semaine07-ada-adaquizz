@@ -3,6 +3,28 @@ import quiz from "./quiz-femmes-scientifiques.json";
 import { variable } from './variable';
 
 export function seeScore(){
-    console.log("on a fini")
-    console.log(`résultat: ${variable.score}/${quiz.questions.length}`)
+    let pourcentage = (variable.score / quiz.questions.length) * 100
+    let messageScore = null
+
+    if(pourcentage >= 100){
+        messageScore = "Aucune erreur, c'est parfait 😎"
+    } else if(pourcentage >= 80){
+        messageScore = "C'est bien, tu as fait peu d'erreurs 😉"
+    } else if(pourcentage >= 50){
+        messageScore = "C'est pas mal, mais tu peux encore t'améliorer 💪"
+    } else if(pourcentage <= 50 && pourcentage > 0){
+        messageScore = "Aïe, tu as beaucoup d'erreurs, tu devrais réessayer 😅"
+    } else {
+        messageScore = "Oups ! Tu n'as trouvé aucune bonne réponse 😱"
+    }
+
+
+    document.querySelector('#app').innerHTML =`
+    <div id="seeScore">
+        <h2 id="scoreMessage">${messageScore}</h2>
+	    <h3 id="scorePourcentage">${pourcentage}% de bonne réponse</h3>
+        <p id="score">Ton score est de ${variable.score}/${quiz.questions.length}</p>
+        <button id="replayQuizz">Restart</button>
+    </div>
+    `
 }
