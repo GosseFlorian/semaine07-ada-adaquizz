@@ -1,5 +1,0 @@
-export function nextQuestion(button){
-    button.addEventListener('click',() =>{
-
-    })
-}
