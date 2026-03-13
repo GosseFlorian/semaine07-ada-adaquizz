@@ -5,6 +5,10 @@ import { variable } from './variable';
 export function showQuestion(){
     document.querySelector('#app').innerHTML = `
         <h2 id="question">${quiz.questions[variable.indexQuestion].question}</h2>
+        <div id="meter-bar">
+            <label for="progress">Question ${variable.indexQuestion + 1}/${quiz.questions.length} : </label>
+            <meter id="progress" min="0" max="${quiz.questions.length}" value="${variable.indexQuestion + 1}"></meter>
+        </div>
         <div id ="responseChoice">
             <button class="choice">${quiz.questions[variable.indexQuestion].options[0]}</button>
             <button class="choice">${quiz.questions[variable.indexQuestion].options[1]}</button>
