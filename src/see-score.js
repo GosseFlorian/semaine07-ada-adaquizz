@@ -19,11 +19,23 @@ export function seeScore(){
     }
     document.querySelector('#app').innerHTML =`
         <h2 id="scoreMessage">${messageScore}</h2>
-	    <h3 id="scorePourcentage">${pourcentage}% de bonne réponse</h3>
-        <p id="score">Resultats : ${variable.score}/${quiz.questions.length}</p>
-        <button id="replayQuizz">Restart</button>
-    `
+        `
+        if(localStorage.getItem("previousScore") === null){
+            document.querySelector('#app').innerHTML +=`
+            <h3 id="scorePourcentage">${pourcentage}% de bonne réponse</h3>
+            <p id="score">Resultats : ${variable.score}/${quiz.questions.length}</p>
+            <button id="replayQuizz">Restart</button>
+            `
+        }else{
+            document.querySelector('#app').innerHTML +=`
+            <h3 id="scorePourcentage">${pourcentage}% de bonne réponse, ton ancien score était de ${localStorage.getItem("previousScore")}%</h3>
+            <p id="score">Resultats : ${variable.score}/${quiz.questions.length}</p>
+            <button id="replayQuizz">Restart</button>
+        `  
+    }
     document.querySelector('#replayQuizz').addEventListener('click', () =>{
+        localStorage.clear()
+        localStorage.setItem("previousScore",`${pourcentage}`)
         variable.score = 0
         variable.indexQuestion = 0
         showQuestion()
