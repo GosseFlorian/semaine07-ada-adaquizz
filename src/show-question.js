@@ -1,6 +1,7 @@
 import './style.css'
 import quiz from "./quiz-femmes-scientifiques.json";
 import { variable } from './variable';
+import confetti from 'canvas-confetti';
 
 export function showQuestion(){
     document.querySelector('#app').innerHTML = `
@@ -21,6 +22,7 @@ export function showQuestion(){
         element.addEventListener('click', () => {
             if(index === quiz.questions[variable.indexQuestion].correctIndex){
                 variable.score ++
+                confetti()
                 document.querySelector('#app').innerHTML += `
                     <p id="goodAnswer">C'est une bonne réponse !</p>
                 `
