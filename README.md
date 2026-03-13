@@ -1,0 +1,1 @@
+Pour lancer le questionnaire, il vous faudra lancer un serveur vite avec la commande (dans le terminal) : npm run dev
